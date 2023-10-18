@@ -1,13 +1,13 @@
 package be.thomasmore.bookserver.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -34,5 +34,7 @@ public class Author {
     public Author(int id) {
         this.id = id;
     }
+
+
 
 }
