@@ -10,6 +10,7 @@ import lombok.ToString;
 import jakarta.persistence.*;
 import java.util.Set;
 
+
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(exclude = {"books"})
@@ -20,13 +21,7 @@ public class Author {
     @Id
     private int id;
 
-    @NotBlank(message = "Author name should not be blank")
-    @NotNull
     private String name;
-
-    private String country;
-    @Column(length=1024)
-    private String description;
 
     @ManyToMany(mappedBy = "authors", fetch = FetchType.LAZY)
     private Set<Book> books;
@@ -34,7 +29,5 @@ public class Author {
     public Author(int id) {
         this.id = id;
     }
-
-
 
 }
