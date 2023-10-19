@@ -12,20 +12,9 @@ import lombok.ToString;
 @ToString(exclude = {"books"})
 @Entity
 public class Serie {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "serie_generator")
-    @SequenceGenerator(name = "serie_generator", sequenceName = "serie_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
 
     private String name;
-
-
-
-    public Serie(int id) {
-        this.id = id;
-    }
-
-
-
-
 }
